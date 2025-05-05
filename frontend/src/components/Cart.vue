@@ -10,7 +10,7 @@
         <div v-for="(product, index) in products" :key="index" class="item" :class="{ active: index === active }"
             :style="{
                 ...getSlideStyle(index),
-                
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${product.BG})`
             }" @click="$emit('select-product', product)"></div>
 
 

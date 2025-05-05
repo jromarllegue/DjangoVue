@@ -108,6 +108,7 @@ export default {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
 }
 
 .item {
@@ -115,58 +116,59 @@ export default {
     background-position: center;
     background-repeat: no-repeat;
     position: absolute;
-    width: 320px;
-    height: 380px;
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 255, 0.3);
-    padding: 20px;
+    width: 340px;
+    height: 400px;
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+    padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    border: 1px solid rgba(0, 0, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
     transition: 0.5s ease-in-out;
-    background-color: rgba(0, 0, 0, 0.1);
-    /* Added opacity */
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Genre Tag */
 .genre-tag {
-    background: rgba(255, 99, 132, 0.8);
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
     color: white;
-    font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 10px;
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 12px;
     position: absolute;
-    top: 10px;
-    left: 10px;
-    font-weight: bold;
+    top: 12px;
+    left: 12px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Title Styling */
 .card-title {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    color: #ffcc00;
+    color: #ffe600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 /* Description Styling */
 .card-description {
-    font-size: 14px;
-    margin-top: 5px;
-    opacity: 0.9;
+    font-size: 15px;
+    margin-top: 8px;
+    opacity: 0.95;
+    color: #e0e0e0;
 }
 
 /* Price Styling */
 .card-price {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    margin-top: 10px;
-    color: #66ff99;
+    margin-top: 12px;
+    color: #00ffcc;
 }
 
 /* Buttons */
@@ -174,7 +176,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     width: 100%;
     position: absolute;
     bottom: 20px;
@@ -182,25 +184,26 @@ export default {
 
 .nav-btn,
 .cart-btn {
-    background: rgba(0, 119, 255, 0.5);
+    background: rgba(0, 119, 255, 0.6);
     color: white;
-    border: 2px solid rgba(0, 119, 255, 0.7);
-    font-size: 24px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    font-size: 22px;
     padding: 12px;
-    border-radius: 12px;
+    border-radius: 14px;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
-    width: 50px;
-    height: 50px;
+    width: 52px;
+    height: 52px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .nav-btn:hover,
 .cart-btn:hover {
-    background: rgba(0, 119, 255, 0.8);
-    transform: scale(1.1);
+    background: rgba(0, 119, 255, 0.85);
+    transform: scale(1.12);
 }
 
 /* Disabled Button */
@@ -208,5 +211,6 @@ export default {
     background: rgba(0, 119, 255, 0.3);
     cursor: not-allowed;
     transform: none;
+    opacity: 0.5;
 }
 </style>

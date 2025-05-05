@@ -113,66 +113,71 @@ export default {
 };
 </script>
 
+
 <style scoped>
+/* Scrollable Items */
 .cart-items-wrapper {
   max-height: 300px;
-  /* Adjust height as needed */
   overflow-y: auto;
-  /* Enables scrolling */
   padding-right: 10px;
-  /* Prevents scrollbar from overlapping content */
 }
 
-/* Optional: Style scrollbar for WebKit browsers */
 .cart-items-wrapper::-webkit-scrollbar {
   width: 6px;
 }
 
 .cart-items-wrapper::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 0, 102, 0.6);
+  background-color: #ff3399;
   border-radius: 5px;
 }
 
 .cart-items-wrapper::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-
-
-/* Background */
+/* Container */
 .cart-container {
   max-width: 600px;
   margin: auto;
   padding: 20px;
-  background: rgba(10, 10, 10, 0.9);
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 0, 102, 0.5);
+  background: linear-gradient(145deg, #1a1a1a, #111);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255, 0, 150, 0.5);
+  color: white;
 }
 
-/* Music-Themed Cards */
+/* Item Card */
 .cart-item {
   position: relative;
   display: flex;
   align-items: center;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(255, 0, 150, 0.1);
+  transition: transform 0.3s ease;
 }
 
-/* Gradient Overlay */
+.cart-item:hover {
+  transform: scale(1.02);
+}
+
+/* Overlay */
 .cart-item-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.8;
+  opacity: 0.7;
   pointer-events: none;
+  z-index: 1;
 }
 
-/* Album Content */
+/* Content Layout */
 .cart-item-content {
   display: flex;
   align-items: center;
@@ -182,9 +187,9 @@ export default {
 .album-cover {
   width: 70px;
   height: 70px;
-  border-radius: 5px;
+  border-radius: 10px;
   object-fit: cover;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .cart-item-info {
@@ -192,18 +197,17 @@ export default {
 }
 
 .album-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
 }
 
 .album-genre {
-  font-size: 0.9rem;
-  color: white;
-  opacity: 0.8;
+  font-size: 0.85rem;
+  color: #ff99cc;
 }
 
-/* Quantity & Remove Button */
+/* Actions */
 .cart-item-actions {
   margin-left: auto;
   display: flex;
@@ -215,102 +219,106 @@ export default {
 .quantity-input {
   width: 50px;
   padding: 5px;
-  text-align: center;
   font-size: 1rem;
-  border: 2px solid white;
-  border-radius: 5px;
-  background: black;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  background: #222;
   color: white;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
 }
 
 .btn-remove {
-  margin-top: 5px;
-  background: red;
-  border: none;
+  margin-top: 6px;
+  background: #ff3366;
   color: white;
-  padding: 5px 8px;
-  border-radius: 5px;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .btn-remove:hover {
-  background: darkred;
+  background: #cc0033;
 }
 
-/* Empty Cart */
+/* Empty Message */
 .empty-cart {
   text-align: center;
-  color: white;
   font-size: 1rem;
-  opacity: 0.7;
+  color: #ccc;
+  margin: 20px 0;
 }
 
-/* Cart Summary */
-.cart-total {
+/* Totals */
+.cart-total,
+.cart-total-quantity {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.cart-total {
   color: #ffcc00;
   font-weight: bold;
 }
 
 .cart-total-quantity {
-  color: #fff;
+  color: #66ffcc;
 }
 
 /* Buttons */
 .btn-buy,
 .btn-clear {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 1rem;
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 12px rgba(255, 0, 100, 0.3);
 }
 
 .btn-buy {
-  background: #ff0066;
+  background: linear-gradient(135deg, #ff0077, #ff3366);
   color: white;
-  border: none;
-  box-shadow: 0 4px 10px rgba(255, 0, 102, 0.5);
 }
 
 .btn-clear {
-  background: #ffcc00;
+  background: linear-gradient(135deg, #ffcc00, #ff9900);
   color: black;
-  border: none;
 }
 
-.btn-buy:hover {
-  background: #ff3388;
-}
-
+.btn-buy:hover,
 .btn-clear:hover {
-  background: #ffd633;
+  transform: scale(1.03);
 }
 
-/* Purchase Success */
+/* Success Popup */
 .purchase-success {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #28a745;
+  background: rgba(40, 167, 69, 0.95);
   color: white;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 25px;
+  border-radius: 12px;
   text-align: center;
-  width: 250px;
-  z-index: 5;
+  width: 280px;
+  box-shadow: 0 0 20px rgba(0, 255, 100, 0.4);
+  z-index: 1000;
 }
 
-/* Loading & Success Icon */
-.loading-icon i,
-.success-icon {
-  font-size: 40px;
+.success-icon,
+.loading-icon i {
+  font-size: 42px;
+  margin-bottom: 10px;
 }
 
-/* Fade Effect */
+/* Transition */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -320,4 +328,5 @@ export default {
 .fade-leave-to {
   opacity: 0;
 }
+
 </style>
